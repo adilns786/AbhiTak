@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 const NEWS_API_ENDPOINT = "https://newsapi.org/v2/everything"
 
 // Use a server-only key for security (set in Vars sidebar)
-const NEWS_API_KEY = process.env.NEWS_API_KEY
+const NEWS_API_KEY = process.env.NEXT_PUBLIC_NEWS_API_KEY
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
@@ -34,6 +34,7 @@ export async function GET(request: Request) {
       return NextResponse.json({ articles: [], error: text }, { status: res.status })
     }
     const data = await res.json()
+    console.log(`Fetched ${data.articles?.length || 0} articles for query "${effectiveQuery}"`)
     return NextResponse.json({ articles: data.articles ?? [] })
   } catch (e: any) {
     return NextResponse.json({ articles: [], error: e?.message ?? "Request failed" }, { status: 500 })

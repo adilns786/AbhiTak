@@ -1,22 +1,29 @@
 import { NextResponse } from "next/server"
-import { getTextModel } from "../../../lib/gemini"
+import { GoogleGenerativeAI } from "@google/generative-ai"
 
+// Initialize Gemini
+const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY!)
+
+// Retry helper for transient errors or rate limits
 async function generateWithRetry(prompt: string, attempts = 3) {
-  const model = getTextModel("gemini-pro")
-  let error: any
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" })
+  let lastError: any
+
   for (let i = 0; i < attempts; i++) {
     try {
       const result = await model.generateContent(prompt)
       return result.response.text()
     } catch (e: any) {
-      error = e
-      const delay = Math.min(1000 * Math.pow(2, i), 4000)
+      lastError = e
+      const delay = Math.min(1000 * Math.pow(2, i), 4000) // exponential backoff
       await new Promise((r) => setTimeout(r, delay))
     }
   }
-  throw error
+
+  throw lastError
 }
 
+// POST /api/ai
 export async function POST(req: Request) {
   try {
     const { content } = await req.json()
@@ -26,17 +33,21 @@ export async function POST(req: Request) {
 
     const prompt = [
       "You are a professional news summarizer.",
-      "Provide a concise 3-4 bullet point summary of the following news article, highlighting the key facts, main developments, and implications.",
+      "Provide a concise 3–4 bullet point summary of the following news article, highlighting the key facts, main developments, and implications.",
       "Keep each point clear and factual.",
       "",
-      `Article: ${content}`,
+      `Article:\n${content}`,
       "",
-      'Return the result as 3-4 lines, each starting with a bullet like "- ".',
+      'Return the result as 3–4 lines, each starting with a bullet like "- ".'
     ].join("\n")
 
     const text = await generateWithRetry(prompt)
     return NextResponse.json({ summary: text })
   } catch (e: any) {
-    return NextResponse.json({ error: e?.message ?? "Summarization failed" }, { status: 500 })
+    console.error("AI summarization error:", e)
+    return NextResponse.json(
+      { error: e?.message ?? "Summarization failed" },
+      { status: 500 }
+    )
   }
 }

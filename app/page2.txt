@@ -1,0 +1,135 @@
+pub_3bb71e2068d246e69e0b8fa7471fb042
+
+get on 
+https://newsdata.io/api/1/latest?apikey=pub_3bb71e2068d246e69e0b8fa7471fb042
+
+News for Category Science
+
+https://newsdata.io/api/1/latest?apikey=pub_3bb71e2068d246e69e0b8fa7471fb042&category=science
+
+
+News from Australia and United States of America ,india
+
+https://newsdata.io/api/1/latest?apikey=pub_3bb71e2068d246e69e0b8fa7471fb042&country=au,us,in
+
+
+response
+
+{
+status: "success"
+totalResults: 840
+results: [
+0: {
+article_id: "b420a23675528d5babb8b45f713e43bd"
+title: "Gold prices today in your city: Check rates in Mumbai, Bengaluru, Chennai, Hyderabad, New Delhi, Ko..."
+link: "https://www.livemint.com/market/commodities/gold-prices-today-october-13-in-your-city-check-silver-..."
+keywords: [
+0: "gold prices today"
+1: "silver mcx prices"
+2: "markets"
+3: "commodity"
+4: "gold prices in hyderabad"
+5: "silver"
+6: "gold prices in chennal"
+7: "gold jewellery"
+8: "gold prices"
+9: "gold prices in mumbai"
+10: "gold"
+11: "gold prices in delhi"
+12: "gold coins"
+13: "gold prices in kolkata"
+14: "gold prices in begaluru"
+15: "gold prices in your city"
+16: "gold mcx prices"
+17: "citywise gold prices"
+18: "silver prices"
+19: "india"
+]
+creator: [
+0: "Jocelyn Fernandes"
+]
+description: "Gold and silver prices in your city today: Check how much prices have changed in Mumbai, Bengaluru,..."
+content: "Gold and silver prices in your city on October 13: Gold and silver prices continued to tower amid m..."
+pubDate: "2025-10-13 07:52:31"
+pubDateTZ: "UTC"
+image_url: "https://www.livemint.com/lm-img/img/2025/10/13/1600x900/im-58801694_1759916722218_1760340854323.jpg"
+video_url: null
+source_id: "livemint"
+source_name: "Mint"
+source_priority: 7134
+source_url: "https://www.livemint.com"
+source_icon: "https://n.bytvi.com/livemint.png"
+language: "english"
+country: [
+0: "india"
+]
+category: [
+0: "business"
+]
+sentiment: "neutral"
+sentiment_stats: {
+positive: 24.04
+neutral: 75.81
+negative: 0.15
+}
+ai_tag: [
+0: "financial markets"
+1: "economy"
+]
+ai_region: [
+0: "new delhi,delhi,india,asia"
+1: "mumbai,maharashtra,india,asia"
+2: "hyderabad,telangana,india,asia"
+3: "kolkata,west bengal,india,asia"
+4: "chennai,tamil nadu,india,asia"
+5: "bengaluru,karnataka,india,asia"
+]
+ai_org: null
+ai_summary: "Gold and silver prices in India rose on October 13 amid market uncertainty due to US-China trade te..."
+ai_content: "Gold and silver prices in India saw an uptick on October 13, reflecting the broader market's respon..."
+duplicate: false
+}
+1: {
+article_id: "10bfb9fdfad43d7ba91c51deb57622e7"
+title: "JD Vance Says US Has 'Far More Cards' Than China In Trade War If They Respond Aggressively: 'We Hav..."
+link: "https://www.benzinga.com/markets/macro-economic-events/25/10/48169732/jd-vance-says-us-has-far-more..."
+keywords: [
+0: "trade war"
+1: "politics"
+2: "jd vance"
+3: "economics"
+4: "tech"
+5: "news"
+6: "markets"
+7: "benzinga"
+8: "us china"
+]
+creator: [
+0: "Namrata Sen"
+]
+description: "Vice President JD Vance asserted that the U.S. holds a stronger position than China in the ongoing ..."
+content: "Vice President JD Vance asserted that the U.S. holds a stronger position than China in the ongoing ..."
+pubDate: "2025-10-13 07:51:19"
+pubDateTZ: "UTC"
+image_url: "https://cdn.benzinga.com/files/images/story/2025/10/13/Atlanta--Georgia--Usa4th-Nov--2024--Ohio.jpe..."
+video_url: null
+source_id: "benzinga"
+source_name: "Benzinga"
+source_priority: 2050
+source_url: "https://www.benzinga.com"
+source_icon: "https://n.bytvi.com/benzinga.png"
+language: "english"
+country: [
+0: "united states of america"
+]
+category: [
+0: "technology"
+]
+sentiment: "neutral"
+sentiment_stats: {
+positive: 33.88
+neutral: 63.1
+negative: 3.02
+}
+ai_tag: [
+0: "gove
