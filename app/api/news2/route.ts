@@ -1,7 +1,7 @@
 // app/api/news/route.ts
 import { NextRequest, NextResponse } from "next/server"
 
-const NEWSDATA_API_KEY = process.env.NEWSDATA_API_KEY || "pub_3bb71e2068d246e69e0b8fa7471fb042"
+const NEWSDATA_API_KEY = process.env.NEXT_PUBLIC_NEWSDATA_API_KEY || ""
 const NEWSDATA_BASE_URL = "https://newsdata.io/api/1/latest"
 
 // NewsData.io response type
